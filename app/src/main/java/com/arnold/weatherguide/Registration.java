@@ -190,7 +190,7 @@ public class Registration extends AppCompatActivity {
 
     //method to fetch the data
     private void Fetching() {
-        String url = "https://api.postalpincode.in/pincode/" + pincode.getText().toString();
+        String url = "https://api.postalpincode.in/pincode/" + pincode.getText().toString(); //indian post json api
 
         @SuppressLint("SetTextI18n") JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, response -> {
             try {
