@@ -1,5 +1,5 @@
 # WeatherGuide
-This is an Android Application that displays the weather of a particular place of india using pincode or the name of the city.
+This is an Android Application that displays the weather of a particular place in India using Pincode or the name of the city.
 
 ![API](https://img.shields.io/badge/Andriod%20SDK-Min%2022-orange) ![API](https://img.shields.io/badge/Android%20Studio-Java-orange) 
 
