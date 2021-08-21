@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fullName"
+        android:title="@string/max_50_character" />
+
+    <item
+        android:id="@+id/address1"
+        android:title="@string/min_3_character_max_50_character" />
+
+    <item
+        android:id="@+id/address2"
+        android:title="@string/max_50_character" />
+
+</menu>

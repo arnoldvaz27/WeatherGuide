@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activities.MainActivity"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/header_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/red"
+            android:weightSum="2"
+            android:padding="@dimen/_15sdp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:includeFontPadding="false"
+                android:text="@string/weather_guide"
+                android:fontFamily="@font/bold_letters"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="176dp"
+            android:layout_marginTop="@dimen/_55sdp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/smartphone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@string/enter_your_mobile_number_to_use_the_application"
+            android:textColor="@color/red"
+            android:textStyle="bold"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_14sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/round_style"
+            android:backgroundTint="@color/gray"
+            android:paddingTop="@dimen/_13sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_15sdp">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_weight="0.2"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:src="@drawable/phone"
+                android:contentDescription="@string/todo" />
+
+            <EditText
+                android:id="@+id/mobile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.8"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:background="@null"
+                android:hint="@string/enter_mobile_number"
+                android:inputType="number"
+                android:padding="@dimen/_3sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/hint"
+                android:textSize="@dimen/_15ssp"
+                android:autofillHints="" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/continue_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/round_style"
+            android:backgroundTint="@color/green"
+            android:padding="@dimen/_2sdp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/bold_letters"
+            android:text="@string/continue_to_register"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+</layout>
