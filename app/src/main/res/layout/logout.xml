@@ -64,7 +64,7 @@
                 android:layout_marginStart="@dimen/_3sdp"
                 android:background="@null"
                 android:hint="@string/enter_mobile_number"
-                android:inputType="phone"
+                android:inputType="number"
                 android:padding="@dimen/_3sdp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/hint"
