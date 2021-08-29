@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/my_gradient"
         android:orientation="vertical"
-        tools:context=".HomeWeather">
+        tools:context="com.arnoldvaz27.weatherguide.HomeWeather">
 
         <LinearLayout
             android:id="@+id/header_title"
@@ -347,7 +347,6 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/doctors"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="fill"
@@ -396,7 +395,6 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/patients"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="fill"
@@ -1019,6 +1017,150 @@
                                 android:layout_marginTop="@dimen/_5sdp"
                                 android:textAlignment="center"
                                 android:text="@string/heat"
+                                android:textSize="@dimen/_9ssp"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="fill"
+                        android:layout_rowWeight="3"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/white"
+                        android:layout_margin="@dimen/_6sdp"
+                        app:cardCornerRadius="@dimen/_6sdp"
+                        app:cardElevation="@dimen/_6sdp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="@dimen/_10sdp"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:src="@drawable/liquid"
+                                android:contentDescription="@string/todo" />
+
+                            <TextView
+                                android:id="@+id/liquid"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:textAlignment="center"
+                                android:text="0 mm/hr"
+                                android:textSize="@dimen/_9ssp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:textAlignment="center"
+                                android:text="Liquid"
+                                android:textSize="@dimen/_9ssp"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="fill"
+                        android:layout_rowWeight="3"
+                        android:layout_columnWeight="2"
+                        android:backgroundTint="@color/white"
+                        android:layout_margin="@dimen/_6sdp"
+                        app:cardCornerRadius="@dimen/_6sdp"
+                        app:cardElevation="@dimen/_6sdp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="@dimen/_10sdp"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:src="@drawable/solar"
+                                android:contentDescription="@string/todo" />
+
+                            <TextView
+                                android:id="@+id/solar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:textAlignment="center"
+                                android:text="0 W/m^2"
+                                android:textSize="@dimen/_9ssp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:textAlignment="center"
+                                android:text="Solar"
+                                android:textSize="@dimen/_9ssp"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="fill"
+                        android:layout_rowWeight="3"
+                        android:layout_columnWeight="3"
+                        android:backgroundTint="@color/white"
+                        android:layout_margin="@dimen/_6sdp"
+                        app:cardCornerRadius="@dimen/_6sdp"
+                        app:cardElevation="@dimen/_6sdp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="@dimen/_10sdp"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:src="@drawable/dayandnight"
+                                android:contentDescription="@string/todo" />
+
+                            <TextView
+                                android:id="@+id/dn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:textAlignment="center"
+                                android:text="NA"
+                                android:textSize="@dimen/_9ssp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:textAlignment="center"
+                                android:text="Day/Night"
                                 android:textSize="@dimen/_9ssp"
                                 android:textColor="@color/black" />
                         </LinearLayout>

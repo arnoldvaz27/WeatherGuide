@@ -1,4 +1,4 @@
-package com.arnold.weatherguide;
+package com.arnoldvaz27.weatherguide;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,6 +8,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
+
+import com.arnoldvaz27.weatherguide.R;
 
 //custom toast class to show custom coloured toast messages
 public class CustomToast {

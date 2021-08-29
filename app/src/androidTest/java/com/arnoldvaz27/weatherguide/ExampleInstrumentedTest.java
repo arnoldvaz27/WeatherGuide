@@ -1,4 +1,4 @@
-package com.arnold.weatherguide;
+package com.arnoldvaz27.weatherguide;
 
 import android.content.Context;
 

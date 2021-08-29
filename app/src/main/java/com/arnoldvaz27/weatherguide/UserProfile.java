@@ -1,4 +1,4 @@
-package com.arnold.weatherguide;
+package com.arnoldvaz27.weatherguide;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,7 +8,8 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.arnold.weatherguide.databinding.UserProfileBinding;
+import com.arnoldvaz27.weatherguide.R;
+import com.arnoldvaz27.weatherguide.databinding.UserProfileBinding;
 
 public class UserProfile extends AppCompatActivity {
 

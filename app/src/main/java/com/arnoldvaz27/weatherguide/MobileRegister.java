@@ -1,6 +1,4 @@
-package com.arnold.weatherguide;
-
-import static com.arnold.weatherguide.CustomToast.showToast;
+package com.arnoldvaz27.weatherguide;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,7 +10,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.arnold.weatherguide.databinding.MobileRegisterBinding;
+import com.arnoldvaz27.weatherguide.databinding.MobileRegisterBinding;
 
 public class MobileRegister extends AppCompatActivity {
 
@@ -36,9 +34,9 @@ public class MobileRegister extends AppCompatActivity {
         binding.continueButton.setOnClickListener(v -> {
             int numberLength = mobileEdt.getText().toString().trim().length();
             if (numberLength != 10) {
-                showToast(getApplicationContext(), "Please enter valid 10 digit number", R.color.red);
+                CustomToast.showToast(getApplicationContext(), "Please enter valid 10 digit number", R.color.red);
             } else if (!TextUtils.isDigitsOnly(mobileEdt.getText().toString())) {
-                showToast(getApplicationContext(),"Please enter numbers only",R.color.red);
+                CustomToast.showToast(getApplicationContext(),"Please enter numbers only",R.color.red);
             } else {
                 binding.continueButton.setEnabled(false);
                 String mobileNumber = mobileEdt.getText().toString();

@@ -1,6 +1,4 @@
-package com.arnold.weatherguide;
-
-import static com.arnold.weatherguide.CustomToast.showToast;
+package com.arnoldvaz27.weatherguide;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -23,7 +21,7 @@ import androidx.databinding.DataBindingUtil;
 
 import com.android.volley.Request;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.arnold.weatherguide.databinding.RegistrationBinding;
+import com.arnoldvaz27.weatherguide.databinding.RegistrationBinding;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -153,13 +151,13 @@ public class Registration extends AppCompatActivity {
             progressBar.setVisibility(View.VISIBLE);
             if (TextUtils.isEmpty(fullName.getText().toString()) || TextUtils.isEmpty(gender.getText().toString()) || TextUtils.isEmpty(dob.getText().toString()) || TextUtils.isEmpty(ageTxt.getText().toString()) || TextUtils.isEmpty(address1.getText().toString()) || TextUtils.isEmpty(pincode.getText().toString())
                     || TextUtils.isEmpty(district.getText().toString()) || TextUtils.isEmpty(state.getText().toString())) {
-                showToast(getApplicationContext(), "Please enter all the details in order to save details", R.color.red);
+                CustomToast.showToast(getApplicationContext(), "Please enter all the details in order to save details", R.color.red);
                 progressBar.setVisibility(View.INVISIBLE);
             } else if (fullName.getText().toString().length() > 50) {
-                showToast(getApplicationContext(), "Please enter valid number of character", R.color.red);
+                CustomToast.showToast(getApplicationContext(), "Please enter valid number of character", R.color.red);
                 progressBar.setVisibility(View.INVISIBLE);
             } else if (address1.getText().toString().length() < 3 || address1.getText().toString().length() > 50) {
-                showToast(getApplicationContext(), "Please enter valid number of character", R.color.red);
+                CustomToast.showToast(getApplicationContext(), "Please enter valid number of character", R.color.red);
                 progressBar.setVisibility(View.INVISIBLE);
             } else {
                 final SharedPreferences DetailPref = getSharedPreferences("Details", MODE_PRIVATE);
@@ -197,7 +195,7 @@ public class Registration extends AppCompatActivity {
                 find = response.getJSONObject(0);
                 status = find.getString("Status");
                 if (status.equals("Error")) {
-                    showToast(getApplicationContext(), "Please provide valid 6 digit pincode", R.color.red);
+                    CustomToast.showToast(getApplicationContext(), "Please provide valid 6 digit pincode", R.color.red);
                     state.setText("State : ");
                     district.setText("District : ");
                     check.setEnabled(true);
@@ -211,12 +209,12 @@ public class Registration extends AppCompatActivity {
                 }
                 progressBar.setVisibility(View.INVISIBLE);
             } catch (JSONException e) {
-                showToast(getApplicationContext(), "Something went wrong, please try again", R.color.red);
+                CustomToast.showToast(getApplicationContext(), "Something went wrong, please try again", R.color.red);
                 progressBar.setVisibility(View.INVISIBLE);
             }
         }, error -> {
             progressBar.setVisibility(View.INVISIBLE);
-            showToast(getApplicationContext(), "Something went wrong, please try again", R.color.red);
+            CustomToast.showToast(getApplicationContext(), "Something went wrong, please try again", R.color.red);
         });
         //in case of any error this toast will be executed
         check.setEnabled(true);

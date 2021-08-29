@@ -1,6 +1,4 @@
-package com.arnold.weatherguide;
-
-import static com.arnold.weatherguide.CustomToast.showToast;
+package com.arnoldvaz27.weatherguide;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,7 +8,8 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.arnold.weatherguide.databinding.LogoutBinding;
+import com.arnoldvaz27.weatherguide.R;
+import com.arnoldvaz27.weatherguide.databinding.LogoutBinding;
 
 public class Logout extends AppCompatActivity {
 
@@ -48,7 +47,7 @@ public class Logout extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),HomeWeather.class));
                 finishAffinity();
             }else{
-                showToast(getApplicationContext(),"Please enter valid details to login",R.color.red);
+                CustomToast.showToast(getApplicationContext(),"Please enter valid details to login",R.color.red);
             }
         });
     }

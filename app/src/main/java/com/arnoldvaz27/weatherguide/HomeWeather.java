@@ -1,6 +1,4 @@
-package com.arnold.weatherguide;
-
-import static com.arnold.weatherguide.CustomToast.showToast;
+package com.arnoldvaz27.weatherguide;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -19,7 +17,7 @@ import androidx.databinding.DataBindingUtil;
 import com.android.volley.Request;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.arnold.simplify.Primitives;
-import com.arnold.weatherguide.databinding.HomeWeatherBinding;
+import com.arnoldvaz27.weatherguide.databinding.HomeWeatherBinding;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -107,7 +105,7 @@ public class HomeWeather extends AppCompatActivity {
         binding.search.setOnClickListener(v -> {
             name = cityName.getText().toString();
             if (name.equals("")) {
-                showToast(getApplicationContext(), "Please enter the city name", R.color.red);
+                CustomToast.showToast(getApplicationContext(), "Please enter the city name", R.color.red);
             } else {
                 location.setText(name);
                 searchCity();
@@ -155,6 +153,9 @@ public class HomeWeather extends AppCompatActivity {
                 String pressure = find.getString("pres");
                 String longitude = find.getString("lon");
                 String latitude = find.getString("lat");
+                String solar = find.getString("ghi");
+                String liquid = find.getString("precip");
+                String dn = find.getString("pod");
                 String aqi = find.getString("aqi");
                 String humid = find.getString("rh");
                 String vis = find.getString("vis");
@@ -170,11 +171,22 @@ public class HomeWeather extends AppCompatActivity {
                 float f = Primitives.CentigradeToFahrenheit(Float.parseFloat(temp));
                 float temperature = Float.parseFloat(temp);
                 float windFloat = Float.parseFloat(windSpeed);
+                float solarFloat = Float.parseFloat(solar);
                 String winds = String.format("%.5f", windFloat);
                 String fahrenheit = String.format("%.1f", f);
                 String celcius = String.format("%.1f", temperature);
+                String si = String.format("%.2f",solarFloat);
                 binding.Centigrade.setText(celcius + tmp + "C");
                 binding.Fahrenheit.setText(fahrenheit + tmp + "F");
+                binding.liquid.setText(liquid + " mm/hr");
+                binding.solar.setText(si + " W/m^2");
+                if(dn.equalsIgnoreCase("d")){
+                    binding.dn.setText("Day");
+                }else if(dn.equalsIgnoreCase("n")){
+                    binding.dn.setText("Night");
+                }else{
+                    binding.dn.setText("N/A");
+                }
                 binding.windSpeed.setText(winds + " m/s");
                 binding.windDirection.setText(windDirection);
                 binding.pressure.setText(pressure + " mb");
@@ -214,13 +226,13 @@ public class HomeWeather extends AppCompatActivity {
                 binding.progressCircular.setVisibility(View.GONE);
                 binding.reload.setVisibility(View.VISIBLE);
             } catch (JSONException e) {
-                showToast(getApplicationContext(), "Something went wrong, Please try again and check the city name", R.color.red);
+                CustomToast.showToast(getApplicationContext(), "Something went wrong, Please try again and check the city name", R.color.red);
                 binding.progressCircular.setVisibility(View.GONE);
                 binding.reload.setVisibility(View.VISIBLE);
                 location.setText("Error");
             }
         }, error -> {
-            showToast(getApplicationContext(), "Something went wrong, Please try again and check the city name", R.color.red);
+            CustomToast.showToast(getApplicationContext(), "Something went wrong, Please try again and check the city name", R.color.red);
             binding.progressCircular.setVisibility(View.GONE);
             binding.reload.setVisibility(View.VISIBLE);
             location.setText("Error");
